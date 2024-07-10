@@ -71,7 +71,7 @@ DATABASES = {
         'NAME': 'dbovekzy',
         'USER': 'dbovekzy_user',
         'PASSWORD': 'SbEIm0NSEZcPpWldcDETcGLpy8ICJCmB',
-        'HOST': 'dpg-cq6u6l5ds78s738mi8s0-a.oregon-postgres.render.com',
+        'HOST': 'dpg-cq6u6l5ds78s738mi8s0-a',
         'PORT': '5432',
     }
 }
