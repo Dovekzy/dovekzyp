@@ -16,6 +16,9 @@ def home(request):
 
 
 def login_users(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+
     if request.method == 'POST':
         form = UsuarioswLoginForm(data=request.POST)
         if form.is_valid():
@@ -35,6 +38,9 @@ def login_users(request):
 
 
 def register(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+
     invitation_code = request.GET.get('invitation_code', '')
     if request.method == 'POST':
         form = UsuarioswCreationForm(request.POST)
