@@ -32,6 +32,7 @@
                     {% endif %}
                 ">
                     {{ message }}
+                    <button class="close-alert ml-2 bg-transparent text-lg font-semibold">×</button>
                 </div>
             {% endfor %}
         </div>
@@ -46,7 +47,15 @@
             message.style.display = 'none'; // Cambia el estilo para ocultar el mensaje
         });
     }, 5000);
+
+    // Cerrar los mensajes manualmente al hacer clic en el botón
+    document.querySelectorAll('.close-alert').forEach(function(button) {
+        button.addEventListener('click', function() {
+            button.parentElement.style.display = 'none';
+        });
+    });
 </script>
+
 <div class="fixed w-full z-30 flex bg-white bg-gradient-to-r from-slate-50 to-slate-900 p-2 items-center justify-center h-16 px-10">
     <div class="logo ml-12 dark:text-black  transform ease-in-out duration-500 flex-none h-full flex items-center justify-center">
         <img alt="ABClogo" class="mr-2"
@@ -474,7 +483,7 @@
                             disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900
                             text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20
                             focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none ml-4">
-                            Get ${{ vip.price }}
+                            Buy ${{ vip.price }}
                             </button>
                         </form>
                     {% endif %}
