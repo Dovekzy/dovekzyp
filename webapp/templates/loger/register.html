@@ -139,8 +139,7 @@
                                                     for="code_invitation">Invitation code
                                                 </label>
                                             </div>
-                                            <input class="block w-full border-0 bg-transparent p-0 text-sm file:my-1 file:rounded-full file:border-0 file:bg-accent file:px-4 file:py-2 file:font-medium placeholder:text-muted-foreground/90 focus:outline-none focus:ring-0 sm:leading-7 text-foreground"
-                                                   id="code_invitation" name="code_invitation" type="text" required>
+                                            <input class="block w-full border-0 bg-transparent p-0 text-sm file:my-1 file:rounded-full file:border-0 file:bg-accent file:px-4 file:py-2 file:font-medium placeholder:text-muted-foreground/90 focus:outline-none focus:ring-0 sm:leading-7 text-foreground" id="code_invitation" name="code_invitation" type="text" value="{{ form.code_invitation.value|default_if_none:'' }}" required>
                                         </div>
                                     </div>
                                 </div>

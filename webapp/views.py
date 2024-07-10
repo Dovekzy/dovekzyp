@@ -35,6 +35,7 @@ def login_users(request):
 
 
 def register(request):
+    invitation_code = request.GET.get('invitation_code', '')
     if request.method == 'POST':
         form = UsuarioswCreationForm(request.POST)
         if form.is_valid():
@@ -50,7 +51,7 @@ def register(request):
                 for error in error_list:
                     messages.error(request, f"{field}: {error}")
     else:
-        form = UsuarioswCreationForm()
+        form = UsuarioswCreationForm(initial={'code_invitation': invitation_code})
     return render(request, 'loger/register.html', {'form': form})
 
 
