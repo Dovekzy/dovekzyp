@@ -422,23 +422,26 @@
         </div>
 
         <!-- VIPS -->
-        <div class="p-4 mb-4 text-sm text-green-700 bg-gradient-to-r from-purple-700 via-slate-50 to-slate-900 rounded-lg dark:bg-green-200 dark:text-green-800" id="vip" style="display: none; height: 100%;">
+        <div class="p-4 mb-4 text-sm text-green-700 bg-gradient-to-r from-purple-700 via-slate-200 to-slate-900 rounded-lg dark:bg-green-200 dark:text-green-800" id="vip" style="display: none; height: 100%;">
             {% for vip in vips %}
-            <div class="bg-gradient-to-r from-slate-900 via-yellow-200 to-yellow-50 p-4 rounded-lg shadow flex justify-between items-center text-white mb-6">
+            <div class="bg-gradient-to-r from-slate-900 via-yellow-400 to-yellow-50 p-4 rounded-lg shadow flex justify-between items-center text-white mb-6">
                 <div class="flex">
                     <img alt="Rank 2" class="mr-4 rounded-full" src="https://github.com/caaras/abcdefghiz/blob/main/abecd/vidimg.jpg?raw=true" style="height:100px; width:100px;">
-                    <div>
-                        <div class="text-primary font-bold text-xl">Vip: {{ vip.id }}</div>
-                        <div class="text-primary font-bold text-xl">Win! Win! and Win</div>
-                        <div class="grid grid-cols-3 gap-2 mt-2 text-sm">
-                            <div class="text-muted-foreground">Price</div>
-                            <div class="text-muted-foreground">Daily Reward</div>
-                            <div class="text-muted-foreground">Quantity</div>
-                            <div>$ {{ vip.price }}</div>
-                            <div>$ {{ vip.dreward }}</div>
-                            <div>30</div>
-                        </div>
-                    </div>
+                    <table class="table-auto">
+                        <tr class="text-primary font-bold text-xl">Vip: {{ vip.id }}</tr>
+                        <thead>
+                        <tr>
+                            <th class="px-4 py-2">Price</th>
+                            <th class="px-4 py-2">Daily Reward</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">$ {{ vip.price }}</td>
+                            <td class="border px-4 py-2">$ {{ vip.dreward }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div>
                     {% if vip.id in purchased_vips %}
